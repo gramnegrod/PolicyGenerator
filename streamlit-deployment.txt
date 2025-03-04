@@ -1,0 +1,85 @@
+# Deploying Your OpenAI Chat App on Streamlit Sharing
+
+Streamlit Sharing provides a free and easy way to deploy your Streamlit app. Follow these steps to get your app online in minutes:
+
+## 1. Prepare Your Project
+
+Make sure your project structure looks like this:
+
+```
+openai-chat-streamlit/
+├── app.py
+├── requirements.txt
+└── .streamlit/
+    └── secrets.toml (optional, for local testing)
+```
+
+## 2. Create a GitHub Repository
+
+1. Create a new repository on GitHub
+2. Push your project files to the repository:
+
+```bash
+# Initialize a git repository
+git init
+
+# Add your files
+git add app.py requirements.txt
+
+# Commit the files
+git commit -m "Initial commit"
+
+# Add your GitHub repository as remote
+git remote add origin https://github.com/your-username/your-repo-name.git
+
+# Push to GitHub
+git push -u origin main
+```
+
+## 3. Deploy on Streamlit Sharing
+
+1. Go to [Streamlit Sharing](https://share.streamlit.io/) and sign in with your GitHub account
+2. Click on "New app"
+3. Select your repository, branch (main), and the path to your app file (app.py)
+4. Click "Deploy"
+
+## 4. Add Your OpenAI API Key
+
+1. Once deployed, go to your app settings
+2. Navigate to the "Secrets" section
+3. Add your OpenAI API key in the following format:
+
+```toml
+OPENAI_API_KEY = "your-api-key-here"
+```
+
+4. Save your secrets
+
+## 5. Your App is Live!
+
+Streamlit Sharing will provide you with a public URL for your app (typically something like https://share.streamlit.io/your-username/your-repo-name/main/app.py).
+
+## Local Development
+
+For local development, you can create a `.streamlit/secrets.toml` file with your API key:
+
+```toml
+OPENAI_API_KEY = "your-api-key-here"
+```
+
+Then run your app with:
+
+```bash
+streamlit run app.py
+```
+
+## Notes
+
+- The free tier of Streamlit Sharing has certain limitations, including:
+  - Public repositories only
+  - Apps sleep after inactivity
+  - Limited compute resources
+  
+- If you need more resources or private repositories, consider Streamlit's paid options or other hosting solutions.
+
+- Remember to never commit your API keys to GitHub. Always use secrets management.
