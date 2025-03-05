@@ -1,0 +1,12 @@
+run = "streamlit run app.py --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false"
+language = "python3"
+
+[env]
+PYTHONPATH = "${PYTHONPATH}:${workspaceFolder}"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "streamlit run app.py --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false"]
+deploymentTarget = "cloudrun"
